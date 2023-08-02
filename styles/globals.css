@@ -1,0 +1,15 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica;
+}
+
+.flexCol{
+  display: flex;
+  align-items: center;
+}
+
+.flexRow{
+  display: flex;
+  justify-content: space-between;
+}
