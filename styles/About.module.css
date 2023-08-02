@@ -1,0 +1,23 @@
+.main   {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem 1rem ;
+}
+
+.textos{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    width: 50%;
+    gap: .8rem;
+}
+
+.textos h1{
+    font-size: 3rem;
+}
+
+.textos p {
+width: 80%;
+font-size: 1.2rem;
+}

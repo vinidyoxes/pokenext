@@ -1,18 +1,40 @@
 
 .navbar{
     margin: 0;
-    padding: 2rem;
+    padding: 1rem 2rem;
     background-color: black;
     color: white;
     display: flex;
-    width: 100%;
-    justify-content: space-around;
+    max-width: 100%;
+    justify-content: space-between;
     align-items: center;
 
+    --angle: 0deg;
+	border-bottom: .5vmin solid;
+	border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+	
+	animation: 5s rotate linear infinite;
 }
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+
 
 .logo{
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .logo img{
@@ -23,12 +45,14 @@
     color: white;
     text-decoration: none;
     list-style: none;
-    padding: 0 1rem;
+    padding: 1rem 1rem;
+    border-bottom: 2px solid transparent;
     transition: 0.3s;
 }
 
 .itemMenu a:hover{
-    color: red;
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
 }
 
 .flexRow{

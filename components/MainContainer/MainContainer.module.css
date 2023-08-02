@@ -1,5 +1,9 @@
 .container{
-    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    min-height: 72vh;
     padding: 20px;
     text-align: center;
+    margin: auto auto;
+    background-color: #e2e2e2;
 }

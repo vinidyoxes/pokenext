@@ -1,10 +1,10 @@
 import '../styles/globals.css'
-import MainContainer from '../components/MainContainer/MainContainer'
+import Layout from '../components/MainContainer/Layout'
 
 function MyApp({ Component, pageProps }) {
-  return <MainContainer>
+  return <Layout>
              <Component {...pageProps} />
-       </MainContainer>
+       </Layout>
 }
 
 export default MyApp
