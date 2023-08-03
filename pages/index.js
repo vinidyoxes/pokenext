@@ -3,7 +3,7 @@ import PokeCard from '../components/pokemonCard/PokeCard';
 import styles from '../styles/Home.module.css'
 import pokeball from '../public/pokeball.png'
 import Image from 'next/dist/client/image';
-import SearchInput from '../components/Inputs/searchInput/searchInput';
+import SearchInput from '../components/Inputs/SearchInput';
 
 
 export async function getStaticProps() {
@@ -39,7 +39,7 @@ export default function Home({pokemons}) {
                  
   return (
     <section className={`${styles.container} flexCol`}>
-      <div className='flexRow' style={{gap:'1rem'}}><h1 style={{fontSize:'2.5rem'}}>Poké<span style={{color:"#A52A2A"}}>Next</span></h1><Image src={pokeball} width='50px' height='40px'/></div>
+      <div className='flexRow' style={{gap:'1rem'}}><h1 style={{fontSize:'2.5rem'}}>Poké<span style={{color:"#A52A2A"}}>Next</span></h1><Image src={pokeball} width='50px' height='40px' alt='logo'/></div>
       <SearchInput 
       search={search}
       SetSearch={SetSearch}
