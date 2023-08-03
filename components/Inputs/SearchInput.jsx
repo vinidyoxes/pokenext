@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styles from './searchInput.module.css'
-import ButtonSearch from '../../Button/ButtonSearch/ButtonSearch'
+import ButtonSearch from '../../Button/ButtonSearch/ButtonSearch.jsx'
 import { BsSearch } from 'react-icons/bs';
 
 
