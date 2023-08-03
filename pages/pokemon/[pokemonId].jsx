@@ -5,7 +5,7 @@ import Head from 'next/dist/shared/lib/head'
 import PokeCardTwo from '../../components/pokemonCard/PokeCardTwo'
 import { RxDividerVertical, } from 'react-icons/rx'
 import { HiOutlineHashtag } from 'react-icons/hi'
-import Button from '../../components/Button/Button/Button'
+import Button from '../../components/Button/Button/Button.js'
 import Link from 'next/dist/client/link'
 
 export const getStaticPaths = async () => {
