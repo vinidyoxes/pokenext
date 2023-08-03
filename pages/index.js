@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import fetch from 'isomorphic-unfetch';
 import PokeCard from '../components/pokemonCard/PokeCard';
 import styles from '../styles/Home.module.css'
 import pokeball from '../public/pokeball.png'
@@ -8,17 +7,21 @@ import SearchInput from '../components/Inputs/searchInput/searchInput';
 
 
 export async function getStaticProps() {
-  const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=251');
+  const maxPokemons = 251;
+  const api = `https://pokeapi.co/api/v2/pokemon/`;
+
+  const res = await fetch(`${api}/?limit=${maxPokemons}`);
+
   const data = await res.json();
-  //add pokemon id
-  data.results.forEach((item,index)=>{
-    item.id = index + 1
-  })
-  const pokemons = data.results;
-  
+
+  // add pokemon index
+  data.results.forEach((item, index) => {
+    item.id = index + 1;
+  });
+
   return {
     props: {
-      pokemons,
+      pokemons: data.results,
     },
   };
 }

@@ -6,7 +6,6 @@ import PokeCardTwo from '../../components/pokemonCard/PokeCardTwo'
 import { RxDividerVertical, } from 'react-icons/rx'
 import { HiOutlineHashtag } from 'react-icons/hi'
 
-
 export const getStaticPaths = async () => {
   const maxPokemons = 251
   const api = `https://pokeapi.co/api/v2/pokemon/`
@@ -16,6 +15,9 @@ export const getStaticPaths = async () => {
   const data = await res.json()
 
   const paths = data.results.map((pokemon, index) => {
+
+     index ++;
+
     return {
       params: { pokemonId: index.toString() },
     }
