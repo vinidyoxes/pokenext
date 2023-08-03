@@ -9,7 +9,7 @@ import Button from '../components/Button/Button/Button'
 function NotFound() {
   return (
     <> 
-    <Image src={img} width={250} height={125}></Image>
+    <Image src={img} width={250} height={125} alt='pokemon 404'></Image>
     <h1>404</h1>
     <p>Esta page nao existe</p>
 
