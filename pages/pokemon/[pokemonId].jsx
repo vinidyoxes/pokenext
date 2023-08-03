@@ -90,7 +90,7 @@ function pokemonId({ pokemon }) {
         </section>
 
          <section className={styles.imgContainer}>
-        <Image style={{ maxWidth: '10px' }} src={`https://nexus.traction.one/images/pokemon/pokemon/${pokemon.id}.png`} alt="Pokemon"
+        <Image src={`https://nexus.traction.one/images/pokemon/pokemon/${pokemon.id}.png`} alt="Pokemon"
           height={300}
           width={300}
           objectFit="contain" />

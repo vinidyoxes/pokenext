@@ -3,7 +3,10 @@ import PokeCard from '../components/pokemonCard/PokeCard';
 import styles from '../styles/Home.module.css'
 import pokeball from '../public/pokeball.png'
 import Image from 'next/dist/client/image';
+<<<<<<< HEAD
 import SearchInput from '../components/Inputs/SearchInput';
+=======
+>>>>>>> 3e14f75668c5a31ed47c2a12c1c43e4dcdaf6c6c
 
 
 export async function getStaticProps() {
