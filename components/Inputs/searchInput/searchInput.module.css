@@ -4,10 +4,6 @@
 }
 
 
-.inputComponent input::after{
-    
-}
-
 .inputComponent input{
     background: none;
     border: none;
