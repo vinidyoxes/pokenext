@@ -5,6 +5,8 @@ import Head from 'next/dist/shared/lib/head'
 import PokeCardTwo from '../../components/pokemonCard/PokeCardTwo'
 import { RxDividerVertical, } from 'react-icons/rx'
 import { HiOutlineHashtag } from 'react-icons/hi'
+import Button from '../../components/Button/Button/Button'
+import Link from 'next/dist/client/link'
 
 export const getStaticPaths = async () => {
   const maxPokemons = 251
@@ -71,7 +73,7 @@ function pokemonId({ pokemon }) {
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <h2 style={{display:'flex' , alignItems:'center'}}><HiOutlineHashtag/>{pokemon.id}</h2>
             <RxDividerVertical></RxDividerVertical>
-            <h1 style={{ textTransform: 'capitalize' }}>{pokemon.name}</h1>
+            <h1 style={{ textTransform: 'capitalize', fontSize:'1.2rem' }}>{pokemon.name}</h1>
           </div>
           
         
@@ -89,11 +91,10 @@ function pokemonId({ pokemon }) {
 
         </section>
 
-         <section className={styles.imgContainer}>
+         <section style={{position:'relative'}} className={`${styles.imgContainer}`}>
         <Image src={`https://nexus.traction.one/images/pokemon/pokemon/${pokemon.id}.png`} alt="Pokemon"
-          height={300}
-          width={300}
-          objectFit="contain" />
+                 layout="fill"
+                 objectFit="fill" />
 
           </section>     
 
@@ -109,6 +110,11 @@ function pokemonId({ pokemon }) {
                 <p>{pokemon.weight / 10} kg</p>
              </div>
 
+            </div>
+            <div className='return'>
+              <Button>
+                <Link href='/'><h3>Voltar</h3></Link>
+                </Button>
             </div>
           </div>
     </>

@@ -21,3 +21,34 @@
 width: 80%;
 font-size: 1.2rem;
 }
+
+
+@media screen and (max-width:480px){
+
+    .main   {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem .5rem ;
+        gap: 1rem;
+    }
+
+    .textos{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        gap: .8rem;
+    }
+
+    .textos h1{
+        font-size: 2rem;
+    }
+
+    .textos p {
+        width: 100%;
+        font-size: 1.2rem;
+        }
+    
+
+}
