@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/dist/client/link'
 import Image from 'next/dist/client/image'
 import img from '../assets/animation_404_small.gif'
-import Button from '../components/Button/Button/Button'
+import Button from '../components/Button/Button/Button.jsx'
 
   
 
