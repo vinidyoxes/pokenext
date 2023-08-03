@@ -1,0 +1,11 @@
+.buttonSearch{
+    padding: .4rem .8rem;
+    border: none;
+    background-color: brown;
+    color: wheat;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.buttonSearch:active{
+    background-color: black;
+}

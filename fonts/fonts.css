@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Pixeloid';
+    src: url('PixeloidSans-mLxMm.ttf') format('truetype'); /* Replace 'YourFontName' with the actual font name and file path */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Pixeloid';
+    src: url('PixeloidSansBold-PKnYd.ttf') format('truetype'); /* Replace 'YourFontName' with the actual font name and file path */
+    font-weight: bold;
+    font-style: normal;
+  }

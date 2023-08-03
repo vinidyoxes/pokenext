@@ -1,6 +1,10 @@
 import React from 'react'
 import Image from 'next/dist/client/image'
-
+import styles from './pokemons.module.css'
+import Head from 'next/dist/shared/lib/head'
+import PokeCardTwo from '../../components/pokemonCard/PokeCardTwo'
+import { RxDividerVertical, } from 'react-icons/rx'
+import { HiOutlineHashtag } from 'react-icons/hi'
 
 
 export const getStaticPaths = async () => {
@@ -37,34 +41,76 @@ export const getStaticProps = async (context) => {
 
 
 
-function pokemonId({pokemon}) {
+function pokemonId({ pokemon }) {
+  console.log(pokemon)
+  console.log(pokemon.types[0])
+  const types = [
+    {
+      typeName:'type_normal',
+      color:'#aa9'
+      },
+      {
+        typeName:'type_fire',
+      color:'#f42'
+      }
+    ]
+
+    
   return (
-    <div className='flexCol'>
-     <h1>{pokemon.name}</h1> 
-     <Image style={{ maxWidth:'10px'}} src={`https://nexus.traction.one/images/pokemon/pokemon/${pokemon.id}.png`} alt="Pokemon" 
-                height={300} 
-                width={300} 
-                objectFit="contain" />   
-      <div>
-        <h3>Numero</h3>
-        <p>#{pokemon.id}</p>
-        <div>
-          <h3>Tipo:</h3>
-          <div style={{display:'flex', gap:'1rem'}}>{pokemon.types.map((item,index)=>{
-            return(
-              <span style={{backgroundColor:'red'}}key={index}>{item.type.name}</span>
-              
-            )
-          })}</div>
-          <div>
-            <h4>Altura:</h4>
-            <p>{pokemon.height * 10 } cm</p>
-            <h4>Peso:</h4>
-            <p>{pokemon.weight / 10 } kg</p>
+    <>
+      <Head>
+        <title>{pokemon.name}</title>
+
+      </Head>
+
+      <div className={`flexCol ${styles.pokeCard} ${styles['type_' + pokemon.types[0].type.name]}`}>
+        <section className={styles.pokeInfo}>
+
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <h2 style={{display:'flex' , alignItems:'center'}}><HiOutlineHashtag/>{pokemon.id}</h2>
+            <RxDividerVertical></RxDividerVertical>
+            <h1 style={{ textTransform: 'capitalize' }}>{pokemon.name}</h1>
           </div>
-        </div>
-      </div>
-    </div>
+          
+        
+            <div style={{ display: 'flex', gap: '.4rem' }}>
+              {pokemon.types.map((item, index) => {
+               console.log(item.type.name) 
+                return (
+                  <span className={`${styles.type} ${styles['type_' + item.type.name]}`}
+                    key={index}>
+                    {item.type.name}</span>
+
+                )
+              })}
+            </div>
+
+        </section>
+
+         <section className={styles.imgContainer}>
+        <Image style={{ maxWidth: '10px' }} src={`https://nexus.traction.one/images/pokemon/pokemon/${pokemon.id}.png`} alt="Pokemon"
+          height={300}
+          width={300}
+          objectFit="contain" />
+
+          </section>     
+
+            <div className='informacoes' style={{display:'flex', justifyContent:'space-evenly',width:'100%'}}>
+            
+             <div className='altura'>
+                <h4>Altura:</h4>
+                <p>{pokemon.height * 10} cm</p>
+             </div>
+
+             <div className='peso'>
+                <h4>Peso:</h4>
+                <p>{pokemon.weight / 10} kg</p>
+             </div>
+
+            </div>
+          </div>
+    </>
+
   )
 }
 

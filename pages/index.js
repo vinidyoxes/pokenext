@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import fetch from 'isomorphic-unfetch';
 import PokeCard from '../components/pokemonCard/PokeCard';
 import styles from '../styles/Home.module.css'
@@ -24,15 +24,31 @@ export async function getStaticProps() {
 }
 
 export default function Home({pokemons}) {
+  const onSubmit = (event)=>{
+    event.preventDefault();
+    console.log(`${search} valor do search ao dar submitt`)
+  }
+  const [search, SetSearch] = useState('')
+
+  const pokeFilter = pokemons.filter((pokemon)=>{
+    return pokemon.name.startsWith(search)
+  })
+                 
   return (
     <section className={`${styles.container} flexCol`}>
       <div className='flexRow' style={{gap:'1rem'}}><h1 style={{fontSize:'2.5rem'}}>Poké<span style={{color:"#A52A2A"}}>Next</span></h1><Image src={pokeball} width='50px' height='40px'/></div>
-      <SearchInput/>
+      <SearchInput 
+      search={search}
+      SetSearch={SetSearch}
+      onSubmit={onSubmit}
+      filter={pokeFilter}
+
+      />
       <section className={styles.pokemonContainer} style={{listStyle:'none'}}>
-        {pokemons.map((pokemon) => { 
-          console.log(pokemon)
+        {pokeFilter.map((pokemon) => { 
           return (
-          <li key={pokemon.id}><PokeCard pokemon={pokemon}></PokeCard></li>
+          <li key={pokemon.id}><PokeCard pokemon={pokemon}></PokeCard>
+          </li>
           
         )}
         )}

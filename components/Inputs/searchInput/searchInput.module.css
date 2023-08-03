@@ -1,10 +1,27 @@
+.inputComponent {
+    display: flex;
+    align-items: stretch;
+}
 
 
+.inputComponent input::after{
+    
+}
 
 .inputComponent input{
     background: none;
     border: none;
     padding: .7rem 1rem;
-    width: 12rem;
+    width: 15rem;
+    height: 2rem;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.inputComponent input:focus{
+    border: none;
+    outline: none;
+}
+
+.inputComponent input:focus::placeholder{
+    visibility: hidden;
 }
